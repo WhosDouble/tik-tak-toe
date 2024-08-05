@@ -2,7 +2,19 @@ import { useState } from "react";
 import "./App.css";
 
 function Sqaure() {
-  return <button className="square">1</button>;
+  //use state for the squares
+  const [value, setValue] = useState(null);
+  //function for when the square is clicked
+  function handleClick() {
+    console.log(value, "clicked");
+    setValue("X");
+  }
+  //rendering the squares
+  return (
+    <button className="square" onClick={handleClick}>
+      {value}
+    </button>
+  );
 }
 
 function App() {
@@ -12,7 +24,7 @@ function App() {
     </>
   );
 }
-
+//the board that holds all of the squares
 export function Board() {
   return (
     <>
